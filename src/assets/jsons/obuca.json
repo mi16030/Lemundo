@@ -1,0 +1,37 @@
+[
+	{
+		"id":1,
+		"kategorija":"obuca",
+		"ime":"Jordan 1 Retro",
+		"prodavac":"obucarnik",
+		"brojPonuda": 0,
+		"aktuelnaPonuda":999,
+		"slanje": "PostExpress",
+		"placanje": "Tekuci racun",
+		"stanje": "Novo",
+		"garancija": "Da",
+		"proizvodjac": "Nike",
+		"velicina":43,
+		"boja": "Crveno crna",
+		"opis": "PATIKE NOVE ,SAMO PROBANE. PROVERITE CENE U SPORTSKIM RADNJAMA KOSTAJU PREKO 20,000 DIN. ORIGINAL",
+		"slike": ["assets/images/obuca/jordan1.jpg", "assets/images/obuca/jordan2.jpg"]
+	},
+	{
+		"id":2,
+		"kategorija":"obuca",
+		"ime":"Nike Dia",
+		"prodavac":"obucarnik",
+		"brojPonuda": 0,
+		"aktuelnaPonuda":999,
+		"slanje": "PostExpress",
+		"placanje": "Tekuci racun",
+		"stanje": "Polovno",
+		"garancija": "Ne",
+		"proizvodjac": "Nike",
+		"velicina":39,
+		"boja": "Belo crna",
+		"opis": "PATIKE NOVE ,SAMO PROBANE. PROVERITE CENE U SPORTSKIM RADNJAMA. ORIGINAL",
+		"slike": ["assets/images/obuca/dia1.jpeg", "assets/images/obuca/dia2.jpeg"]
+	}
+
+]

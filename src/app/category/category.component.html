@@ -1,0 +1,16 @@
+<p>category works!</p>
+
+<div>
+  <p style="font-weight: bold;">Flat Map</p>
+  <p *ngFor="let a of auctions">
+    {{ a.ime }}
+    <span>{{ a.prodavac }} </span>
+
+    <img src="{{ a.slike[1] }}" />
+    <button [routerLink]="['/auctions', a.kategorija, a.id]">
+      Pogledaj aukciju
+    </button>
+  </p>
+</div>
+<!--<app-auction-result *ngFor="let auction of auctions" 
+    [auction]="auction">{{f.name}}</app-auction-result>-->

@@ -1,0 +1,36 @@
+[
+	{
+		"id":3,
+		"kategorija":"tehnika",
+		"ime":"Redmi 8 Pro",
+		"prodavac":"mobilarnik",
+		"brojPonuda": 1,
+		"aktuelnaPonuda":1999,
+		"slanje": "PostExpress",
+		"placanje": "Pouzecem",
+		"stanje": "Polovno",
+		"garancija": "Ne",
+		"proizvodjac": "Xiaomi",
+        "velicina": 225,
+		"boja": "Bela",
+		"opis": "Original telefon. Koriscen godinu dana. Prodajem zbog kupovine novog. U odlicnom stanju.",
+		"slike": ["assets/images/tehnika/redmi81.jpg", "assets/images/tehnika/redmi82.jpg", "assets/images/tehnika/redmi83.jpg"]
+	},
+	{	"id":4,
+		"kategorija":"tehnika",
+		"ime":"iPhone X",
+		"prodavac":"mobilarnik",
+		"brojPonuda": 0,
+		"aktuelnaPonuda":99999,
+		"slanje": "BEX",
+		"placanje": "Tekuci racun",
+		"stanje": "Novo",
+		"garancija": "Da",
+		"proizvodjac": "Apple",
+		"velicina": 325,
+		"boja": "Crna",
+		"opis": "Nov, ali vec imam android telefon. Extra promotivna cena. Ne propustite.",
+		"slike": ["assets/images/tehnika/iphonex1.png", "assets/images/tehnika/iphonex2.jpg"]
+	}
+
+]
