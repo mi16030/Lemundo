@@ -1,5 +1,16 @@
-<div class="container">
+<!--<div class="container">
   <app-navigation></app-navigation>
-
+  
   <router-outlet></router-outlet>
+</div>-->
+<app-navigation></app-navigation>
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <app-category-sidebar></app-category-sidebar>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid"></div>
+    <router-outlet></router-outlet>
+  </div>
 </div>

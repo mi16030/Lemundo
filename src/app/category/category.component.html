@@ -10,12 +10,10 @@
   </div>
 </ng-sidebar-container>-
 <app-category-sidebar></app-category-sidebar>-->
+<!--
 <div class="d-flex" id="wrapper">
-  <!-- Sidebar -->
+  
   <app-category-sidebar></app-category-sidebar>
-  <!-- /#sidebar-wrapper -->
-
-  <!-- Page Content -->
   <div id="page-content-wrapper">
     <div class="container-fluid">
       <div>
@@ -29,11 +27,35 @@
           </button>
         </p>
       </div>
-      <!-- /#page-content-wrapper -->
+       
     </div>
-    <!-- /#wrapper -->
+   
   </div>
 
-  <!--<app-auction-result *ngFor="let auction of auctions" 
-    [auction]="auction">{{f.name}}</app-auction-result>-->
+
+</div>-->
+<!--
+<div class="container-fluid d-flex">
+  <p *ngFor="let a of auctions">
+    {{ a.ime }}
+    <span>{{ a.prodavac }} </span>
+
+    <img src="{{ a.slike[1] }}" width="100px" />
+    <button [routerLink]="['/auctions', a.kategorija, a.id]">
+      Pogledaj aukciju
+    </button>
+  </p>
 </div>
+-->
+
+<!-- /#page-content-wrapper -->
+<p *ngFor="let a of auctions">
+  {{ a.ime }}
+  <span>{{ a.prodavac }} </span>
+
+  <img src="{{ a.slike[1] }}" width="200px" />
+  <button [routerLink]="['/auctions', a.kategorija, a.id]">
+    Pogledaj aukciju
+  </button>
+  <button (click)="dodajUListuZelja()">Dodaj u listu zelja</button>
+</p>

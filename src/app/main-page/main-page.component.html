@@ -1,40 +1,31 @@
-<div class="d-flex" id="wrapper">
-  <!-- Sidebar -->
-  <app-category-sidebar></app-category-sidebar>
-  <!-- /#sidebar-wrapper -->
+<div>
+  <h1 class="mt-4">VAŽNO OBAVEŠTENJE</h1>
+  <p>
+    Dragi Limundovci, vanredno stanje je ukinuto. Verujemo da će se rad Pošte i
+    kurirskih službi u narednom periodu normalizovati. Ukoliko sve bude u redu,
+    rokovi za obavljanje saradnji i za ocenjivanje vraćaju se na staro 18. maja.
+  </p>
+  <p>
+    Sve aktuelne informacije možete pronaći klikom ovde.
+  </p>
 
-  <!-- Page Content -->
-  <div id="page-content-wrapper">
-    <div class="container-fluid">
-      <h1 class="mt-4">VAŽNO OBAVEŠTENJE</h1>
-      <p>
-        Dragi Limundovci, vanredno stanje je ukinuto. Verujemo da će se rad
-        Pošte i kurirskih službi u narednom periodu normalizovati. Ukoliko sve
-        bude u redu, rokovi za obavljanje saradnji i za ocenjivanje vraćaju se
-        na staro 18. maja.
-      </p>
-      <p>
-        Sve aktuelne informacije možete pronaći klikom ovde.
-      </p>
+  <!-- Wrapper for slides -->
+  <h3>Preporucujemo:</h3>
 
-      <!-- Wrapper for slides -->
-      <h3>Preporucujemo:</h3>
-
-      <div
-        style="
-          width: 840px;
-          height: 500px;
-          text-align: center;
-          margin: 0;
-          padding: 0;
-        "
-      >
-        <ng-image-slider #nav [images]="imageObject"></ng-image-slider>
-        <!--<button (click)="prevImageClick()">Prev</button>-->
-        <!--<button (click)="nextImageClick()">Next</button>-->
-      </div>
-    </div>
-    <!-- /#page-content-wrapper -->
+  <div
+    style="
+      width: 840px;
+      height: 500px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    "
+  >
+    <ng-image-slider #nav [images]="imageObject"></ng-image-slider>
+    <!--<button (click)="prevImageClick()">Prev</button>-->
+    <!--<button (click)="nextImageClick()">Next</button>-->
   </div>
-  <!-- /#wrapper -->
 </div>
+<!-- /#page-content-wrapper -->
+
+<!-- /#wrapper -->

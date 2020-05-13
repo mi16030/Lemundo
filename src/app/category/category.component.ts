@@ -35,6 +35,11 @@ export class CategoryComponent implements OnInit, OnDestroy {
       );
     });
   }
+
+  dodajUListuZelja(id: number): void {
+    let a: Aukcija = this.auctions.find((x) => x.id === id);
+    this.cartService.addToCart(a);
+  }
   ngOnDestroy() {
     if (this.paramMapSub !== null) {
       this.paramMapSub.unsubscribe();
