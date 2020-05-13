@@ -18,6 +18,7 @@ import { AuctionResultComponent } from "./auction-result/auction-result.componen
 import { AuctionComponent } from "./auction/auction.component";
 import { CategorySidebarComponent } from "./category-sidebar/category-sidebar.component";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { SidebarModule } from "ng-sidebar";
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     NgImageSliderModule,
     HttpClientModule,
+    SidebarModule,
   ],
   providers: [HttpClientModule, HttpClient],
   bootstrap: [AppComponent],

@@ -1,3 +1,13 @@
-<p>auction works!</p>
-<p>{{ auction.ime }}</p>
-<p>{{ auction.proizvodjac }}</p>
+<div *ngIf="aukcija">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>{{ aukcija.ime }}</td>
+    </tr>
+    <tr>
+      <td>Author</td>
+      <td>{{ aukcija.proizvodjac }}</td>
+    </tr>
+  </table>
+  <button (click)="dodajUListuZelja()">Dodaj u listu zelja</button>
+</div>

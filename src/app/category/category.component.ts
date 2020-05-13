@@ -14,7 +14,10 @@ export class CategoryComponent implements OnInit, OnDestroy {
   auctions = [];
   kategorija: string;
   private paramMapSub: Subscription = null;
-
+  private _opened: boolean = true;
+  private _toggleSidebar() {
+    this._opened = !this._opened;
+  }
   constructor(
     private auctionService: AuctionService,
     private route: ActivatedRoute,
@@ -22,19 +25,11 @@ export class CategoryComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    /*console.log(this.route);
-    let putanja = this.route.url;
-
-    this.auctionService.getAuctions(this.rout).subscribe(
-      (auctions) => (this.auctions = auctions),
-      (error) => console.log(error)
-    );
-    */
     this.paramMapSub = this.route.paramMap.subscribe((params) => {
       //const pId: number = Number(params.get("id"));productI
       const kategorija = params.get("category");
 
-      this.auctionService.getAuctions(kategorija).subscribe(
+      this.auctionService.getAuctionsByCategory(kategorija).subscribe(
         (auctions) => (this.auctions = auctions),
         (error) => console.log(error)
       );

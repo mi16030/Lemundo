@@ -11,11 +11,8 @@ import { map, first, take } from "rxjs/operators";
   templateUrl: "./auction.component.html",
   styleUrls: ["./auction.component.css"],
 })
-export class AuctionComponent implements OnDestroy {
-  public auction: Aukcija;
-
-  // Nije neophodno ukidati pretplatu nad paramMap,
-  // posto ce Angular to automatski uraditi po unistenju komponente
+export class AuctionComponent implements OnInit, OnDestroy {
+  public aukcija: Aukcija;
   private paramMapSub: Subscription = null;
 
   constructor(
@@ -29,32 +26,21 @@ export class AuctionComponent implements OnDestroy {
       console.log(kategorija);
       console.log(id);
 
-      this.auctionService.getAuction(kategorija, id).subscribe(
+      this.auctionService.getAuctionsByCategoryAndId(kategorija, id).subscribe(
         (auction) => {
-          this.auction = auction;
+          this.aukcija = auction;
         },
         (error) => console.log(error)
       );
-      /*
-      this.auctionService.getAuctions(kategorija).subscribe(
-        (auctions) => {
-          this.auction = auctions[0];
-        },
-        (error) => console.log(error)
-      );*/
-
-      /*this.auctionService.getAuction(kategorija, id).subscribe(
-        (auction) => (this.auction = auction),
-        (error) => console.log(error)
-      );
-      */
-      //this.auctionService.getAuctions(kategorija).forEach(a =>
-      // )
-      console.log(this.auction);
-
-      //this.auction = this.auctionService.getAuction(kategorija, id)
+      console.log(this.aukcija);
     });
   }
+
+  dodajUListuZelja(): void {
+    this.cartService.addToCart(this.aukcija);
+  }
+
+  ngOnInit() {}
 
   ngOnDestroy() {
     if (this.paramMapSub !== null) {

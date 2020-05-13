@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { CartService } from '../services/cart.service';
-import { ProductModel } from '../models/product.model';
+import { Component, OnInit } from "@angular/core";
+import { CartService } from "../services/cart.service";
+import { ProductModel } from "../models/product.model";
 import {
   FormBuilder,
   FormGroup,
   AbstractControl,
   ValidatorFn,
   Validators,
-  ValidationErrors
-} from '@angular/forms';
+  ValidationErrors,
+} from "@angular/forms";
+import { Aukcija } from "../models/aukcija.model";
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: "app-cart",
+  templateUrl: "./cart.component.html",
+  styleUrls: ["./cart.component.css"],
 })
 export class CartComponent implements OnInit {
-  public items: ProductModel[] = [];
+  public items: Aukcija[] = [];
   public checkoutForm: FormGroup;
 
   constructor(
@@ -25,12 +26,12 @@ export class CartComponent implements OnInit {
   ) {
     this.items = this.cartService.getItems();
     this.checkoutForm = this.formBuilder.group({
-      name: ['', [Validators.required, this.nameValidator()]],
+      name: ["", [Validators.required, this.nameValidator()]],
       address: [
-        '',
-        [Validators.required, Validators.pattern('[0-9]+ [ a-zA-Z0-9]+')]
+        "",
+        [Validators.required, Validators.pattern("[0-9]+ [ a-zA-Z0-9]+")],
       ],
-      email: ['', [Validators.required, Validators.email]]
+      email: ["", [Validators.required, Validators.email]],
     });
   }
 
@@ -45,7 +46,7 @@ export class CartComponent implements OnInit {
     //     a validation error object
     return (control: AbstractControl): ValidationErrors | null => {
       const nameIsCorrect =
-        control.value.split(' ').filter((el: string) => el !== '').length > 1;
+        control.value.split(" ").filter((el: string) => el !== "").length > 1;
       return nameIsCorrect ? null : { incorrectName: true };
     };
   }
@@ -53,7 +54,7 @@ export class CartComponent implements OnInit {
   public submitForm(data): void {
     console.log(data);
     if (!this.checkoutForm.valid) {
-      window.alert('Not valid!');
+      window.alert("Not valid!");
       return;
     }
 
@@ -64,12 +65,12 @@ export class CartComponent implements OnInit {
   }
 
   public get name() {
-    return this.checkoutForm.get('name');
+    return this.checkoutForm.get("name");
   }
   public get address() {
-    return this.checkoutForm.get('address');
+    return this.checkoutForm.get("address");
   }
   public get email() {
-    return this.checkoutForm.get('email');
+    return this.checkoutForm.get("email");
   }
 }

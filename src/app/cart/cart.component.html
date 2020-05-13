@@ -7,10 +7,10 @@
 
 <div *ngIf="items.length > 0; else noItems">
   <p>Your current cart includes these items:</p>
-  <div class="alert alert-info" *ngFor="let product of items">
-    <h4>{{ product.name }}</h4>
+  <div class="alert alert-info" *ngFor="let aukcija of items">
+    <h4>{{ aukcija.ime }}</h4>
     <hr />
-    <h6>{{ product.price | currency }}</h6>
+    <h6>{{ aukcija.aktuelnaPonuda }}</h6>
   </div>
 
   <h4 class="text-right">Total price: {{ items | sum | currency }}</h4>
@@ -59,22 +59,13 @@
   <div class="alert alert-danger" *ngIf="name.errors?.required">
     Name is required
   </div>
-  <div
-    class="alert alert-danger"
-    *ngIf="name.errors?.incorrectName"
-  >
+  <div class="alert alert-danger" *ngIf="name.errors?.incorrectName">
     Name is not correct
   </div>
-  <div
-    class="alert alert-danger"
-    *ngIf="address.errors?.required"
-  >
+  <div class="alert alert-danger" *ngIf="address.errors?.required">
     Address is required
   </div>
-  <div
-    class="alert alert-danger"
-    *ngIf="address.errors?.pattern"
-  >
+  <div class="alert alert-danger" *ngIf="address.errors?.pattern">
     Address doesn't match the pattern
   </div>
   <div class="alert alert-danger" *ngIf="email.errors?.required">

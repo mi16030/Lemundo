@@ -1,23 +1,23 @@
-import { Injectable } from '@angular/core';
-import { ProductModel } from '../models/product.model';
+import { Injectable } from "@angular/core";
+import { Aukcija } from "../models/aukcija.model";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class CartService {
-  private items: ProductModel[] = [];
+  private items: Aukcija[] = [];
 
-  constructor() { }
+  constructor() {}
 
-  public addToCart(product: ProductModel): void {
-    this.items.push(product);
+  public addToCart(aukcija: Aukcija): void {
+    this.items.push(aukcija);
   }
 
-  public getItems(): ProductModel[] {
+  public getItems(): Aukcija[] {
     return this.items;
   }
 
-  public clearCart(): ProductModel[] {
+  public clearCart(): Aukcija[] {
     this.items = [];
     return this.items;
   }
