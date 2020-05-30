@@ -19,6 +19,7 @@ import { AuctionComponent } from "./auction/auction.component";
 import { CategorySidebarComponent } from "./category-sidebar/category-sidebar.component";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { SidebarModule } from "ng-sidebar";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { SidebarModule } from "ng-sidebar";
     NgImageSliderModule,
     HttpClientModule,
     SidebarModule,
+    NgbModule,
   ],
   providers: [HttpClientModule, HttpClient],
   bootstrap: [AppComponent],
