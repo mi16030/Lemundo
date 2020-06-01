@@ -1,1 +1,42 @@
-<p>auction-result works!</p>
+<div
+  class="row"
+  style="padding: 35px; background-color: #f7f7f7; border: 1px solid #ddd;"
+>
+  <div class="col-xs-5 col-lg-4">
+    <img
+      border="0"
+      alt="{{ auction.ime }}"
+      src="{{ auction.slike[1] }}"
+      width="350px"
+      height="250px"
+    />
+  </div>
+  <div class="col-md-5 pull-left">
+    <h3 class="kolor">{{ auction.ime }}</h3>
+    <p>{{ auction.opis }}</p>
+    <p class="kolor">
+      <small>{{ auction.prodavac }}</small>
+    </p>
+    <div class="list_item_cena">
+      <p class="orange_txt pull-left">
+        <small class="hidden-sm hidden-xs">Aktuelna cena:<br /></small>
+        {{ auction.aktuelnaPonuda }} <small>din</small>
+      </p>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <p>59 <small>sekundi</small></p>
+    <p>{{ auction.brojPonuda }} <small>ponuda</small></p>
+    <button
+      style="margin-bottom: 25px;"
+      class="btn btn-info"
+      [routerLink]="['/auctions', auction.kategorija, auction.id]"
+    >
+      Pogledaj aukciju
+    </button>
+    <div heline-height="200%"></div>
+    <button class="btn btn-dark" (click)="dodajUListuZelja(auction.id)">
+      Dodaj u listu zelja
+    </button>
+  </div>
+</div>

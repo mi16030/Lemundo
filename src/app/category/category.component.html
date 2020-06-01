@@ -49,7 +49,9 @@
 -->
 
 <!-- /#page-content-wrapper -->
+<!--
 <p *ngFor="let a of auctions">
+  
   {{ a.ime }}
   <span>{{ a.prodavac }} </span>
 
@@ -58,4 +60,9 @@
     Pogledaj aukciju
   </button>
   <button (click)="dodajUListuZelja(a.id)">Dodaj u listu zelja</button>
-</p>
+</p>-->
+
+<app-auction-result
+  *ngFor="let a of auctions"
+  [auction]="a"
+></app-auction-result>

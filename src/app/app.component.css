@@ -2,6 +2,11 @@ body {
   overflow-x: hidden;
 }
 
+.razmak {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
+
 #sidebar-wrapper {
   min-height: 100vh;
   margin-left: -15rem;

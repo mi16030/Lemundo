@@ -11,7 +11,7 @@ import { AuctionsComponent } from "../auctions/auctions.component";
 const routes: Routes = [
   { path: "", component: MainPageComponent },
   { path: "products", component: ProductListComponent },
-  { path: "checkout", component: CartComponent },
+  { path: "wishlist", component: CartComponent },
   { path: "auctions", component: AuctionsComponent },
   { path: "products/:productId", component: ProductInfoComponent },
   { path: "auctions/:category", component: CategoryComponent },

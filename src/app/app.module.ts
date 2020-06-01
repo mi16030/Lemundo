@@ -20,6 +20,8 @@ import { CategorySidebarComponent } from "./category-sidebar/category-sidebar.co
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { SidebarModule } from "ng-sidebar";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ProdavacInfoComponent } from './prodavac-info/prodavac-info.component';
+import { KarakteristikeComponent } from './karakteristike/karakteristike.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AuctionResultComponent,
     AuctionComponent,
     CategorySidebarComponent,
+    ProdavacInfoComponent,
+    KarakteristikeComponent,
   ],
   imports: [
     BrowserModule,

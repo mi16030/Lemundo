@@ -1,43 +1,6 @@
-<!--
-<div *ngIf="aukcija" class="d-flex" id="wrapper">
-  
-  <div class="row" style="max-height: 300px; max-width: 500px;">
-    <ngb-carousel>
-      <ng-template ngbSlide *ngFor="let img of aukcija.slike">
-        <img
-          [src]="[img]"
-          alt="Random first slide"
-          role="listbox"
-          style="width: 100%; height: 500px !important;"
-        />
-      </ng-template>
-    </ngb-carousel>
-  </div>
-
-  <div id="page-content-wrapper">
-    <div class="container-fluid"></div>
-    <table>
-      <tr>
-        <td>Name</td>
-        <td>{{ aukcija.ime }}</td>
-      </tr>
-      <tr>
-        <td>Author</td>
-        <td>{{ aukcija.proizvodjac }}</td>
-      </tr>
-    </table>
-    <div>
-      <p style="font-weight: bold;">Interval</p>
-      <p>{{ countdown }}</p>
-    </div>
-    <button (click)="dodajUListuZelja()">Dodaj u listu zelja</button>
-  </div>
-</div>
--->
-
 <div *ngIf="aukcija" class="container">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-6">
       <ngb-carousel>
         <ng-template ngbSlide *ngFor="let img of aukcija.slike">
           <img
@@ -49,17 +12,23 @@
         </ng-template>
       </ngb-carousel>
     </div>
-    <div class="col-sm">
-      <h1 class="col-md-10 col-12 p-0 mb-3 mb-md-0">
+    <div class="col-md-3">
+      <h1>
         {{ aukcija.ime }}
       </h1>
-      <button class="btn btn-outline-secondary" (click)="dodajUListuZelja()">
+      <button
+        style="margin-top: 25px;"
+        class="btn btn-outline-secondary"
+        (click)="dodajUListuZelja()"
+      >
         Dodaj u listu zelja
       </button>
       <br /><br />
       <h4>Preostalo vreme {{ countdown }}</h4>
 
-      <h4>Broj ponuda {{ aukcija.brojPonuda }}</h4>
+      <h4 style="margin-bottom: 25px; padding-bottom: 25px;">
+        Broj ponuda {{ aukcija.brojPonuda }}
+      </h4>
 
       <div class="bg-grey p-4 rounded" style="background: #f4f4f4;">
         <div class="d-flex flex-column flex-md-row text-center text-md-left">
@@ -87,61 +56,7 @@
         </div>
       </div>
     </div>
-
-    <div class="col-sm panel panel-default">
-      <div class="bg-grey p-4 rounded" style="background: #f4f4f4;">
-        <div class="d-flex flex-column flex-md-row text-center text-md-left">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="mb-0">Prodavac</h4>
-            </div>
-            <div class="panel-body">
-              <h4 class="word_break">{{ aukcija.prodavac }}</h4>
-
-              <p>100% pozitivnih</p>
-              <p>Lokacija : Beograd</p>
-              <div class="row">
-                <div class="col-sm">
-                  <img src="assets/images/crown.png" width="50" height="50" />
-                </div>
-                <div class="col-sm">
-                  <img src="assets/images/star.png" width="60" height="55" />
-                </div>
-              </div>
-              <div class="col">
-                <div class="row">
-                  <button class="btn btn-danger">Posaljite poruku</button>
-                </div>
-                <div class="row"></div>
-
-                <span style="display: block; height: 50; width: 20;"></span>
-                <img src="assets/images/zastita.png" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-prodavac-info [prodavac]="aukcija.prodavac"></app-prodavac-info>
   </div>
-
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 style="color: #b30000;">Karakteristike predmeta</h3>
-      </div>
-      <div class="panel-body">
-        <p>
-          Velicina: <strong>{{ aukcija.velicina }}</strong>
-        </p>
-        <p>
-          Proizvodjac: <strong>{{ aukcija.proizvodjac }}</strong>
-        </p>
-        <p>
-          Boja: <strong>{{ aukcija.boja }}</strong>
-        </p>
-        <h3 style="color: #b30000;">Opis predmeta</h3>
-        <p>{{ aukcija.opis }}</p>
-      </div>
-    </div>
-  </div>
+  <app-karakteristike [aukcija]="aukcija"></app-karakteristike>
 </div>

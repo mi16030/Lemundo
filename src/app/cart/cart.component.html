@@ -1,20 +1,17 @@
-<h2>Checkout</h2>
+<h2>Lista zelja</h2>
 <hr />
 
 <ng-template #noItems>
-  The cart is empty
+  Lista zelja je prazna
 </ng-template>
 
 <div *ngIf="items.length > 0; else noItems">
-  <p>Your current cart includes these items:</p>
-  <div class="alert alert-info" *ngFor="let aukcija of items">
-    <h4>{{ aukcija.ime }}</h4>
-    <hr />
-    <h6>{{ aukcija.aktuelnaPonuda }}</h6>
-  </div>
+  <app-auction-result
+    *ngFor="let a of items"
+    [auction]="a"
+  ></app-auction-result>
 
-  <h4 class="text-right">Total price: {{ items | sum | currency }}</h4>
-
+  <!--
   <form [formGroup]="checkoutForm" (ngSubmit)="submitForm(checkoutForm.value)">
     <div class="form-group">
       <label for="name">Name</label>
@@ -74,4 +71,5 @@
   <div class="alert alert-danger" *ngIf="email.errors?.email">
     Email is not valid
   </div>
+  -->
 </div>

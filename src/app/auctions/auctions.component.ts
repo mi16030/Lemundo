@@ -9,7 +9,7 @@ import { Aukcija } from "../models/aukcija.model";
   styleUrls: ["./auctions.component.css"],
 })
 export class AuctionsComponent implements OnInit {
-  auctions = [];
+  auctions: Aukcija[] = [];
   constructor(
     private auctionService: AuctionService,
     private cartService: CartService
