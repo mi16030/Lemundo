@@ -24,32 +24,31 @@
         Dodaj u listu zelja
       </button>
       <br /><br />
-      <h4>Preostalo vreme {{ countdown }}</h4>
+      <h4 id="vreme">Preostalo vreme {{ countdown }}</h4>
 
       <h4 style="margin-bottom: 25px; padding-bottom: 25px;">
-        Broj ponuda {{ aukcija.brojPonuda }}
+        Broj ponuda {{ brojPonuda }}
       </h4>
 
       <div class="bg-grey p-4 rounded" style="background: #f4f4f4;">
         <div class="d-flex flex-column flex-md-row text-center text-md-left">
           <div class="col-md-4 p-0">Aktuelna ponuda</div>
           <div class="col-md-8 px-0 pd-item-price" id="aktuelnaPonuda">
-            {{ aukcija.aktuelnaPonuda }}
+            <strong>{{ aktuelna }}</strong>
           </div>
         </div>
 
         <div class="col-md-4 col-12 p-0 mb-md-0 mb-3">Moja ponuda</div>
-        <div class="col-md-8 col-8 px-0 mx-auto mx-md-0"></div>
         <div class="input-group">
-          <input type="hidden" value="{{ aukcija.aktuelnaPonuda }}" />
           <input
             type="text"
             AUTOCOMPLETE="off"
-            placeholder="(min. {{ aukcija.aktuelnaPonuda }} din)"
+            placeholder="(min. {{ aktuelna }} din)"
             class="form-control form-control-lg"
+            id="nasaPonuda"
           />
           <span class="input-group-btn">
-            <button type="submit" class="btn btn-lg btn-success">
+            <button class="btn btn-lg btn-success" (click)="ponudjeno()">
               Licitiraj
             </button>
           </span>
