@@ -22,6 +22,7 @@ import { SidebarModule } from "ng-sidebar";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ProdavacInfoComponent } from './prodavac-info/prodavac-info.component';
 import { KarakteristikeComponent } from './karakteristike/karakteristike.component';
+import { UspehPodaciComponent } from './uspeh-podaci/uspeh-podaci.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { KarakteristikeComponent } from './karakteristike/karakteristike.compone
     CategorySidebarComponent,
     ProdavacInfoComponent,
     KarakteristikeComponent,
+    UspehPodaciComponent,
   ],
   imports: [
     BrowserModule,

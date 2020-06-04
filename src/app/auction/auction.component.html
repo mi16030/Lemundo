@@ -24,7 +24,14 @@
         Dodaj u listu zelja
       </button>
       <br /><br />
-      <h4 id="vreme">Preostalo vreme {{ countdown }}</h4>
+      <h4 id="vreme" *ngIf="!pobedio">Preostalo vreme {{ countdown }}</h4>
+      <h4
+        id="vreme"
+        *ngIf="pobedio"
+        [routerLink]="['/auctions', aukcija.kategorija, aukcija.id, 'uspeh']"
+      >
+        Cestitamo! Pobedili ste. Kliknite da popunite podatke!
+      </h4>
 
       <h4 style="margin-bottom: 25px; padding-bottom: 25px;">
         Broj ponuda {{ brojPonuda }}

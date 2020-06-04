@@ -1,0 +1,104 @@
+<div style="padding: 50px; background-color: #f7f7f7;">
+  <h2 style="color: #2f5687;">
+    <strong>
+      Čestitamo, popunite podatke o slanju i placanju da bi ostvarili saradnju!
+    </strong>
+  </h2>
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="submitForm(checkoutForm.value)">
+    <div class="form-group">
+      <label for="name">Ime</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="form-control"
+        formControlName="name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="address">Adresa</label>
+      <input
+        type="text"
+        name="address"
+        id="address"
+        class="form-control"
+        formControlName="address"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="telefon">Broj telefona</label>
+      <input
+        type="text"
+        name="telefon"
+        id="telefon"
+        class="form-control"
+        formControlName="telefon"
+      />
+    </div>
+
+    <div class="form-group">
+      <select class="custom-select">
+        <option value="" disabled>Izaberite način slanja</option>
+        <option>AKS</option>
+        <option>BEX</option>
+        <option>PostExpress</option>
+        <option>Lično preuzimanje</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <select class="custom-select">
+        <option value="" disabled>Izaberite način plaćanja</option>
+        <option>Tekući račun</option>
+        <option>PostNet</option>
+        <option>Pouzećem</option>
+        <option>Lično</option>
+      </select>
+    </div>
+
+    <button
+      class="btn btn-info btn-block"
+      type="submit"
+      [disabled]="!checkoutForm.valid"
+    >
+      Završi kupovinu
+    </button>
+  </form>
+  <!--
+  <div class="alert alert-danger" *ngIf="name.errors?.required">
+    Name is required
+  </div>
+  <div class="alert alert-danger" *ngIf="name.errors?.incorrectName">
+    Name is not correct
+  </div>
+  <div class="alert alert-danger" *ngIf="address.errors?.required">
+    Address is required
+  </div>
+  <div class="alert alert-danger" *ngIf="address.errors?.pattern">
+    Address doesn't match the pattern
+  </div>
+  <div class="alert alert-danger" *ngIf="email.errors?.required">
+    Email is required
+  </div>
+  <div class="alert alert-danger" *ngIf="email.errors?.email">
+    Email is not valid
+  </div>
+  <div class="alert alert-danger" *ngIf="telefon.errors?.required">
+    Telefon is required
+  </div>
+  <div class="alert alert-danger" *ngIf="telefon.errors?.pattern">
+    Telefon is not valid
+  </div>
+  -->
+</div>

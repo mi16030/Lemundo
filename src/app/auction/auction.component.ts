@@ -16,10 +16,11 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 export class AuctionComponent implements OnInit, OnDestroy {
   public aukcija: Aukcija;
   private paramMapSub: Subscription = null;
-  private countdown = 59;
+  private countdown = 29;
   private aktuelna;
   private najveca;
   private nasa = false;
+  private pobedio = false;
   private brojPonuda;
 
   constructor(
@@ -116,6 +117,10 @@ export class AuctionComponent implements OnInit, OnDestroy {
           document.getElementById("vreme").innerText = this.nasa
             ? "Pobedili ste"
             : "Izgubili ste";
+          if (this.nasa) {
+            this.pobedio = true;
+          }
+
           countdownSubscription.unsubscribe();
         }
       },

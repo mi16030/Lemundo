@@ -7,6 +7,7 @@ import { MainPageComponent } from "../main-page/main-page.component";
 import { CategoryComponent } from "../category/category.component";
 import { AuctionComponent } from "../auction/auction.component";
 import { AuctionsComponent } from "../auctions/auctions.component";
+import { UspehPodaciComponent } from "../uspeh-podaci/uspeh-podaci.component";
 
 const routes: Routes = [
   { path: "", component: MainPageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: "products/:productId", component: ProductInfoComponent },
   { path: "auctions/:category", component: CategoryComponent },
   { path: "auctions/:category/:id", component: AuctionComponent },
+  { path: "auctions/:category/:id/uspeh", component: UspehPodaciComponent },
 ];
 
 @NgModule({
