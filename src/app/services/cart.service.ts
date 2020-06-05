@@ -21,4 +21,9 @@ export class CartService {
     this.items = [];
     return this.items;
   }
+  public proveri(id: number): boolean {
+    if (this.items.find((i) => i.id === id) === undefined) return true;
+
+    return false;
+  }
 }

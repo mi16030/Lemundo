@@ -1,4 +1,4 @@
 <app-auction-result
-  *ngFor="let a of auctions"
+  *ngFor="let a of auctions | filter: pretraga"
   [auction]="a"
 ></app-auction-result>

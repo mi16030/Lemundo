@@ -20,9 +20,10 @@ import { CategorySidebarComponent } from "./category-sidebar/category-sidebar.co
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { SidebarModule } from "ng-sidebar";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { ProdavacInfoComponent } from './prodavac-info/prodavac-info.component';
-import { KarakteristikeComponent } from './karakteristike/karakteristike.component';
-import { UspehPodaciComponent } from './uspeh-podaci/uspeh-podaci.component';
+import { ProdavacInfoComponent } from "./prodavac-info/prodavac-info.component";
+import { KarakteristikeComponent } from "./karakteristike/karakteristike.component";
+import { UspehPodaciComponent } from "./uspeh-podaci/uspeh-podaci.component";
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { UspehPodaciComponent } from './uspeh-podaci/uspeh-podaci.component';
     ProdavacInfoComponent,
     KarakteristikeComponent,
     UspehPodaciComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { UspehPodaciComponent } from './uspeh-podaci/uspeh-podaci.component';
     HttpClientModule,
     SidebarModule,
     NgbModule,
+    FormsModule,
   ],
   providers: [HttpClientModule, HttpClient],
   bootstrap: [AppComponent],

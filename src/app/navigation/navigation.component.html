@@ -15,7 +15,23 @@
   </div>
   <div class="col-12">
     <nav class="navbar navbar-expand navbar-dark bg-light">
-      <button class="btn btn-danger">PRETRAŽI SVE AUKCIJE</button>
+      <input
+        style="margin-right: 20px;"
+        type="text"
+        class="col-xs-3"
+        [(ngModel)]="text"
+      />
+      <!--- <button
+        class="btn btn-danger"
+        [routerLink]="['/auctions']"
+        [queryParams]="{ text: 'pretraga' }"
+      >
+        PRETRAŽI SVE AUKCIJE
+      </button>-->
+      <button class="btn btn-danger" (click)="dalje()">
+        PRETRAŽI SVE AUKCIJE
+      </button>
+
       <!--
       <form
         [formGroup]="checkoutForm"

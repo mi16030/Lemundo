@@ -14,6 +14,7 @@ export class AuctionResultComponent implements OnInit {
   ngOnInit() {}
 
   dodajUListuZelja(): void {
-    this.cartService.addToCart(this.auction);
+    if (this.cartService.proveri(this.auction.id))
+      this.cartService.addToCart(this.auction);
   }
 }
