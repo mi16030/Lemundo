@@ -26,7 +26,6 @@ export class CategoryComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.paramMapSub = this.route.paramMap.subscribe((params) => {
-      //const pId: number = Number(params.get("id"));productI
       const kategorija = params.get("category");
 
       this.auctionService.getAuctionsByCategory(kategorija).subscribe(

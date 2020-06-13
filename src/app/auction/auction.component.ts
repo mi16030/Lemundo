@@ -84,14 +84,6 @@ export class AuctionComponent implements OnInit, OnDestroy {
     }
   }
   newObservable4() {
-    /*const interval$ = interval(1000);
-
-    interval$.subscribe(
-      (value) => (this.interval = new Date()),
-      (error) => console.error(error),
-      () => console.log("complete")
-    );*/
-
     const countdown$ = interval(1000);
 
     const countdownSubscription = countdown$.subscribe(

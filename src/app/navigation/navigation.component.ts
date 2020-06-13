@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { PretragaService } from "../services/pretraga.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 
@@ -9,17 +8,9 @@ import { FormsModule } from "@angular/forms";
   styleUrls: ["./navigation.component.css"],
 })
 export class NavigationComponent implements OnInit {
-  /*private trazim: string = (document.getElementById(
-    "pretraga"
-  ) as HTMLInputElement).value;
-  private myObj = { text: "${this.trazim}" };*/
   myModel: string;
-  text: string = "hehedsdijj";
-  constructor(
-    private pretragaService: PretragaService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {}
+  text: string;
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {}
 

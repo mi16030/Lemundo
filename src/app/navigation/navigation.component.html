@@ -21,43 +21,9 @@
         class="col-xs-3"
         [(ngModel)]="text"
       />
-      <!--- <button
-        class="btn btn-danger"
-        [routerLink]="['/auctions']"
-        [queryParams]="{ text: 'pretraga' }"
-      >
-        PRETRAŽI SVE AUKCIJE
-      </button>-->
       <button class="btn btn-danger" (click)="dalje()">
         PRETRAŽI SVE AUKCIJE
       </button>
-
-      <!--
-      <form
-        [formGroup]="checkoutForm"
-        (ngSubmit)="submitForm(checkoutForm.value)"
-      >
-        <div class="form-group">
-          <input
-            type="text"
-            name="name"
-            id="name"
-            class="form-control"
-            formControlName="name"
-            style="margin-top: 15px; margin-left: 15px;"
-          />
-        </div>
-      </form>
-      -->
-
-      <!--<ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/checkout']">Checkout</a>
-        </li>
-      </ul>-->
     </nav>
   </div>
 </div>

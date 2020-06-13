@@ -1,6 +1,6 @@
 <div *ngIf="aukcija" class="container">
-  <div class="row">
-    <div class="col-md-6">
+  <div class="row razmak2">
+    <div class="col">
       <ngb-carousel>
         <ng-template ngbSlide *ngFor="let img of aukcija.slike">
           <img
@@ -12,7 +12,7 @@
         </ng-template>
       </ngb-carousel>
     </div>
-    <div class="col-md-3">
+    <div class="col-lg-4">
       <h1>
         {{ aukcija.ime }}
       </h1>
@@ -38,24 +38,33 @@
       </h4>
 
       <div class="bg-grey p-4 rounded" style="background: #f4f4f4;">
-        <div class="d-flex flex-column flex-md-row text-center text-md-left">
-          <div class="col-md-4 p-0">Aktuelna ponuda</div>
-          <div class="col-md-8 px-0 pd-item-price" id="aktuelnaPonuda">
+        <div class="row">
+          <div class="col">Aktuelna ponuda</div>
+          <div class="col" id="aktuelnaPonuda">
             <strong>{{ aktuelna }}</strong>
           </div>
         </div>
 
-        <div class="col-md-4 col-12 p-0 mb-md-0 mb-3">Moja ponuda</div>
-        <div class="input-group">
-          <input
-            type="text"
-            AUTOCOMPLETE="off"
-            placeholder="(min. {{ aktuelna }} din)"
-            class="form-control form-control-lg"
-            id="nasaPonuda"
-          />
+        <div class="row razmak2">
+          <div class="col text-md-left">Moja ponuda</div>
+          <div class="col input-group">
+            <input
+              type="text"
+              AUTOCOMPLETE="off"
+              placeholder="(min {{ aktuelna }})"
+              class="form-control form-control-lg"
+              id="nasaPonuda"
+            />
+          </div>
+        </div>
+
+        <div class="row">
           <span class="input-group-btn">
-            <button class="btn btn-lg btn-success" (click)="ponudjeno()">
+            <button
+              style="width: 331px;"
+              class="btn btn-lg btn-success"
+              (click)="ponudjeno()"
+            >
               Licitiraj
             </button>
           </span>

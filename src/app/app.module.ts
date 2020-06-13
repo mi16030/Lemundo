@@ -4,11 +4,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./routes/app-routing.module";
 import { AppComponent } from "./app.component";
-import { ProductListComponent } from "./product-list/product-list.component";
 import { NavigationComponent } from "./navigation/navigation.component";
-import { ProductInfoComponent } from "./product-info/product-info.component";
 import { CartComponent } from "./cart/cart.component";
-import { SumPipe } from "./pipes/sum.pipe";
 import { MainPageComponent } from "./main-page/main-page.component";
 import { SlideshowComponent } from "./slideshow/slideshow.component";
 import { NgImageSliderModule } from "ng-image-slider";
@@ -23,16 +20,13 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ProdavacInfoComponent } from "./prodavac-info/prodavac-info.component";
 import { KarakteristikeComponent } from "./karakteristike/karakteristike.component";
 import { UspehPodaciComponent } from "./uspeh-podaci/uspeh-podaci.component";
-import { FilterPipe } from './pipes/filter.pipe';
+import { FilterPipe } from "./pipes/filter.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent,
     NavigationComponent,
-    ProductInfoComponent,
     CartComponent,
-    SumPipe,
     MainPageComponent,
     SlideshowComponent,
     AuctionsComponent,

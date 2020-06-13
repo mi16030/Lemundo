@@ -52,7 +52,7 @@ export class UspehPodaciComponent implements OnInit {
       window.alert("Not valid!");
       return;
     }
-
+    console.log("Javice vam se prodavac uskoro!");
     // Contact server here...
     this.checkoutForm.reset();
   }

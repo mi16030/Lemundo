@@ -10,7 +10,7 @@ export class CartService {
   constructor() {}
 
   public addToCart(aukcija: Aukcija): void {
-    this.items.push(aukcija);
+    if (this.proveri(aukcija.id)) this.items.push(aukcija);
   }
 
   public getItems(): Aukcija[] {
