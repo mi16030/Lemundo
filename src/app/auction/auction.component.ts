@@ -16,7 +16,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 export class AuctionComponent implements OnInit, OnDestroy {
   public aukcija: Aukcija;
   private paramMapSub: Subscription = null;
-  private countdown = 29;
+  private countdown = 59;
   private aktuelna;
   private najveca;
   private nasa = false;
@@ -77,10 +77,18 @@ export class AuctionComponent implements OnInit, OnDestroy {
     );
     if (ponuda > this.najveca) {
       console.log("moja", ponuda);
-      if (!this.nasa) this.aktuelna = this.najveca + 10;
+      if (!this.nasa) {
+        this.aktuelna = this.najveca + 10;
+        this.brojPonuda++;
+      }
       this.najveca = ponuda;
       this.nasa = true;
-      this.brojPonuda++;
+    } else {
+      if (ponuda > this.aktuelna) {
+        this.aktuelna = ponuda + 10;
+        this.brojPonuda += 2;
+        this.nasa = false;
+      }
     }
   }
   newObservable4() {
@@ -97,12 +105,18 @@ export class AuctionComponent implements OnInit, OnDestroy {
             Math.random() * (this.aktuelna + 1000 - this.aktuelna + 1) +
               this.aktuelna
           );
-          console.log("njihova", nova);
+          console.log("njihova neka", nova);
           if (nova > this.najveca) {
             this.aktuelna = this.najveca + 10;
             this.najveca = nova;
             this.nasa = false;
             this.brojPonuda++;
+            console.log("njihova uspela", nova);
+          } else {
+            if (nova > this.aktuelna) {
+              this.aktuelna = nova + 10;
+              this.brojPonuda += 2;
+            }
           }
         }
         if (this.countdown === 0) {

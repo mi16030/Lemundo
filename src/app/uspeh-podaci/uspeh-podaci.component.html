@@ -5,6 +5,18 @@
     </strong>
   </h2>
 
+  <div
+    *ngIf="zavrsenaKupovina"
+    style="
+      text-align: center;
+      padding: 20px;
+      background-color: #43c254;
+      color: #f7f7f7;
+    "
+  >
+    <h3>Hvala, javice vam se prodavac uskoro</h3>
+  </div>
+
   <form [formGroup]="checkoutForm" (ngSubmit)="submitForm(checkoutForm.value)">
     <div class="form-group">
       <label for="name">Ime</label>
@@ -16,6 +28,12 @@
         formControlName="name"
       />
     </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="name.errors?.required || name.errors?.incorrectName"
+    >
+      Unesite ime i prezime
+    </div>
     <div class="form-group">
       <label for="address">Adresa</label>
       <input
@@ -25,6 +43,12 @@
         class="form-control"
         formControlName="address"
       />
+    </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="address.errors?.required || address.errors?.pattern"
+    >
+      Unesite adresu u formatu: postanski broj ulica
     </div>
     <div class="form-group">
       <label for="email">Email</label>
@@ -36,6 +60,12 @@
         formControlName="email"
       />
     </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="email.errors?.required || email.errors?.email"
+    >
+      Unesite validan email
+    </div>
     <div class="form-group">
       <label for="telefon">Broj telefona</label>
       <input
@@ -45,6 +75,12 @@
         class="form-control"
         formControlName="telefon"
       />
+    </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="telefon.errors?.required || telefon.errors?.pattern"
+    >
+      Unesite svoj broj telefona
     </div>
 
     <div class="form-group">
@@ -71,34 +107,9 @@
       class="btn btn-info btn-block"
       type="submit"
       [disabled]="!checkoutForm.valid"
+      (click)="submitForm()"
     >
       Završi kupovinu
     </button>
   </form>
-  <!--
-  <div class="alert alert-danger" *ngIf="name.errors?.required">
-    Name is required
-  </div>
-  <div class="alert alert-danger" *ngIf="name.errors?.incorrectName">
-    Name is not correct
-  </div>
-  <div class="alert alert-danger" *ngIf="address.errors?.required">
-    Address is required
-  </div>
-  <div class="alert alert-danger" *ngIf="address.errors?.pattern">
-    Address doesn't match the pattern
-  </div>
-  <div class="alert alert-danger" *ngIf="email.errors?.required">
-    Email is required
-  </div>
-  <div class="alert alert-danger" *ngIf="email.errors?.email">
-    Email is not valid
-  </div>
-  <div class="alert alert-danger" *ngIf="telefon.errors?.required">
-    Telefon is required
-  </div>
-  <div class="alert alert-danger" *ngIf="telefon.errors?.pattern">
-    Telefon is not valid
-  </div>
-  -->
 </div>

@@ -17,6 +17,7 @@ import { Aukcija } from "../models/aukcija.model";
 export class UspehPodaciComponent implements OnInit {
   public items: Aukcija[] = [];
   public checkoutForm: FormGroup;
+  public zavrsenaKupovina = false;
 
   constructor(private formBuilder: FormBuilder) {
     this.checkoutForm = this.formBuilder.group({
@@ -26,7 +27,7 @@ export class UspehPodaciComponent implements OnInit {
         [Validators.required, Validators.pattern("[0-9]+ [ a-zA-Z0-9]+")],
       ],
       email: ["", [Validators.required, Validators.email]],
-      telefon: ["", [Validators.required, Validators.pattern("[0-9]+")]],
+      telefon: ["", [Validators.required, Validators.pattern("[ 0-9]+")]],
     });
   }
 
@@ -52,9 +53,11 @@ export class UspehPodaciComponent implements OnInit {
       window.alert("Not valid!");
       return;
     }
-    console.log("Javice vam se prodavac uskoro!");
+    //console.log("Javice vam se prodavac uskoro!");
+    this.zavrsenaKupovina = true;
     // Contact server here...
     this.checkoutForm.reset();
+    this.zavrsenaKupovina = false;
   }
 
   public get name() {
